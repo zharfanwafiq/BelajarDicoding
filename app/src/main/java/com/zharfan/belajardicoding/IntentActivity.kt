@@ -16,9 +16,16 @@ class IntentActivity : AppCompatActivity() {
         moveActivity()
     }
 
-    private fun moveActivity()= with(binding) {
-        btnMoveActivity.setOnClickListener{
-            startActivity(Intent(this@IntentActivity,MoveActivity::class.java))
+    private fun moveActivity() = with(binding) {
+        btnMoveActivity.setOnClickListener {
+            startActivity(Intent(this@IntentActivity, MoveActivity::class.java))
+        }
+
+        btnMoveActivityWithData.setOnClickListener {
+            val sendData = Intent(this@IntentActivity, MoveWithDataActivity::class.java)
+                .putExtra(MoveWithDataActivity.EXTRA_NAME, "Zharfan Wafiq")
+                .putExtra(MoveWithDataActivity.EXTRA_AGE, 19)
+            startActivity(sendData)
         }
     }
 
