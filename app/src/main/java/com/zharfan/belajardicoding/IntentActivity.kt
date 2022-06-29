@@ -1,6 +1,7 @@
 package com.zharfan.belajardicoding
 
 import android.content.Intent
+import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.zharfan.belajardicoding.databinding.ActivityIntentBinding
@@ -26,6 +27,11 @@ class IntentActivity : AppCompatActivity() {
                 .putExtra(MoveWithDataActivity.EXTRA_NAME, "Zharfan Wafiq")
                 .putExtra(MoveWithDataActivity.EXTRA_AGE, 19)
             startActivity(sendData)
+        }
+
+        btDialNumber.setOnClickListener{
+            val phoneNumber = "082185647869"
+            startActivity(Intent(Intent.ACTION_DIAL, Uri.parse("tel:$phoneNumber")))
         }
     }
 
